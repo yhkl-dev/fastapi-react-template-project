@@ -1,0 +1,14 @@
+.login-form-container {
+  display: flex;
+  height: 100vh;
+  background-image: url("./login-bg.jpg");
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+}
+.login-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 500px;
+}

@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "web"
+version = "0.1.0"
+description = "backend API"
+authors = ["Kai Yang <kaiyang939325@gmail.com"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+asyncpg = "0.28.0"
+uvicorn = "0.23.0"
+sqlmodel = "0.0.11"
+fastapi = "0.98.0"
+fastapi-azure-auth = "^4.3.0"
+watchdog = "^3.0.0"
+passlib = "^1.7.4"
+celery = "^5.3.5"
+faker = "^20.0.0"
+msal = "^1.25.0"
+aiocache = "^0.12.2"
+redis = "^5.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

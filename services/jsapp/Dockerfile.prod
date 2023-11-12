@@ -1,0 +1,19 @@
+FROM node:18.13.0 AS builder
+
+# copy package.json and package-lock.json into /usr/app
+WORKDIR /usr/src/app
+
+COPY package*.json /usr/src/app
+COPY . .
+RUN yarn config set registry https://registry.npmmirror.com
+RUN yarn install
+RUN yarn build
+
+
+FROM nginx:1.23-alpine
+# Set working directory to nginx asset directory
+WORKDIR /usr/src/app
+# Copy static assets from builder stage
+COPY --from=builder /usr/src/app/build .
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d
